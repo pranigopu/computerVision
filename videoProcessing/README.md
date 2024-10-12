@@ -35,7 +35,7 @@ FFmpeg (Fast Forward Moving Picture Experts Group) is a free and open source sof
 > - [`python-ffmpeg` (documentation)](https://pypi.org/project/python-ffmpeg/)
 
 ## `subprocess`
-A built-in module in Python that allows you to spawn child processes (subprocesses), connect to their input/output/error [pipes](https://github.com/pranigopu/computerVision/definitions#pipe) and obtain their return codes (e.g. returned status, returned value, etc.). It is a valuable tool to execute external functions and commands in Python (instead of manually running them in a terminal application). Thus, it seamlessly integrates external programming into one's Python workflow.
+A built-in module in Python that allows you to spawn child processes (subprocesses), connect to their input/output/error [pipes](https://github.com/pranigopu/computerVision/definitions#pipe) and obtain their return codes (e.g. returned status, returned value, etc.). It is a valuable tool to execute external functions and commands in Python instead of manually running them in a terminal application (e.g. video format conversion commands). Thus, it seamlessly integrates external programming into one's Python workflow.
 
 > **References**:
 >
