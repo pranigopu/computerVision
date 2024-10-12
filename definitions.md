@@ -1,4 +1,4 @@
-<h1> DEFINITIONS </h1>
+<h1>DEFINITIONS</h1>
 
 ---
 
