@@ -1,4 +1,5 @@
-# CONVERT MOV FILE TO MP4 
+# CONVERT MOV FILE TO MP4
+# Converts a particular MOV 
 
 # NOTE: Both the versions achieve the same effect.
 
@@ -9,12 +10,13 @@ import ffmpeg
 name = '0001542f-7c670be8'
 inputFile = name + '.mov'
 outputFile = name + '.mp4'
-subprocess.run(['getmac'])
+subprocess.run(['cmd', '/c'])
+ffmpeg.input(inputFile).output(outputFile).run()
 
 '''
 NOTE: Why use `subprocess.run(['cmd', '/c'])`? See...
 "Issues with commands through Python's subprocess module"
-... in the implementation notes.
+... in the working notes.
 '''
 
 #================================================
