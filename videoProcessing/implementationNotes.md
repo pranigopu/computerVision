@@ -14,7 +14,7 @@ When first trying to run FFmpeg through the Python binding `ffmpeg-python`, the 
 <details>
 <summary>Click to see error message</summary>
 
-<verbatim>
+<pre>
 Traceback (most recent call last):
   File "C:\Users\prana\Documents\computerVision\videoProcessing\convert_from_mov_to_mp4.py", line 12, in <module>
     ffmpeg.input(inputFile).output(name + '.mp4').run()
@@ -30,7 +30,7 @@ Traceback (most recent call last):
     hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 FileNotFoundError: [WinError 2] The system cannot find the file specified
-</verbatim>
+</pre>
 
 </details>
 
