@@ -9,11 +9,10 @@ import ffmpeg
 name = '0001542f-7c670be8'
 inputFile = name + '.mov'
 outputFile = name + '.mp4'
-subprocess.call(['cmd', '/c'])
-ffmpeg.input(inputFile).output(outputFile).run()
+subprocess.run(['getmac'])
 
 '''
-NOTE: Why use `subprocess.call(['cmd', '/c'])`? See...
+NOTE: Why use `subprocess.run(['cmd', '/c'])`? See...
 "Issues with commands through Python's subprocess module"
 ... in the implementation notes.
 '''
