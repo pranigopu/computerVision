@@ -1,7 +1,9 @@
+# CONVERT MOV FILE TO MP4 
+
 # NOTE: Both the versions achieve the same effect.
 
 #================================================
-# VERSION 1
+# Version 1
 import subprocess
 import ffmpeg
 name = '0001542f-7c670be8'
@@ -17,7 +19,7 @@ NOTE: Why use `subprocess.call(['cmd', '/c'])`? See...
 '''
 
 #================================================
-# VERSION 2
+# Version 2
 # The same as version 1 except for the last line.
 '''
 import subprocess
@@ -29,7 +31,7 @@ subprocess.run(['ffmpeg', '-i', inputFile, outputFile])
 '''
 
 #================================================
-# COMPARING THE TWO CODE VERSIONS
+# Comparing the two code versions
 '''
 The advantage of version 1 is that you only need to install
 the Python binding for FFmpeg (here, the Python binding used
