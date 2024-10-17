@@ -26,12 +26,16 @@ setx /m PATH "C:\ffmpeg\bin;%PATH%"
 
 <details>
 <summary>Click for explanation</summary>
-<code>setx</code> creates or modifies environment variables in the user or system environment, without requiring programming or scripting. <code>/m</code> specifies that the variable must be set in the system environment (this must be specified since the default setting is the local environment, i.e. for the current user's environment only). <code>PATH</code> is an environment variable which must be reassigned.
+<code>setx</code> creates or modifies environment variables in the user or system environment, without requiring programming or scripting. <code>/m</code> specifies that the variable must be set in the system environment (this must be specified since the default setting is the local environment, i.e. for the current user's environment only). Reference: <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/setx"><code>setx</code> from <b>learn.microsoft.com</b> (documentation)</a>.
 <br><br>
-<code>"C:\ffmpeg\bin;%PATH%"</code> is the value that must be assigned to the <code>PATH</code> variable (to learn more about the use of the percent symbol % in Windows command line to represent variable values, click <a href="https://github.com/pranigopu/computerVision/information.md#percent-character-in-windows-command-line">here</a>). Here, <code>%PATH%</code> represents the value of the <code>PATH</code> variable, which is a string of folder paths separated by semicolons. Hence, <code>"C:\ffmpeg\bin;%PATH%"</code> is actually a string where the folder path <code>C:\ffmpeg\bin</code> is concatenated (along with a semicolon to separate it from other folder paths) to the current value of the <code>PATH</code> variable, which is itself a string of folder paths separated by semicolons.
+<code>PATH</code> is an environment variable which must be reassigned. <code>"C:\ffmpeg\bin;%PATH%"</code> is the value that must be assigned to the <code>PATH</code> variable (to learn more about the use of the percent symbol % in Windows command line to represent variable values, click <a href="https://github.com/pranigopu/computerVision/information.md#percent-character-in-windows-command-line">here</a>). Here, <code>%PATH%</code> represents the value of the <code>PATH</code> variable, which is a string of folder paths separated by semicolons. Hence, <code>"C:\ffmpeg\bin;%PATH%"</code> is actually a string where the folder path <code>C:\ffmpeg\bin</code> is concatenated (along with a semicolon to separate it from other folder paths) to the current value of the <code>PATH</code> variable, which is itself a string of folder paths separated by semicolons.
 </details>
 
+---
+
 Doing this will make `ffmpeg` a usable command.
+
+---
 
 > **References**:
 > 
