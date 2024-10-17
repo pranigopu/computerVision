@@ -16,7 +16,7 @@ ffmpeg.input(inputFile).output(outputFile).run()
 '''
 NOTE: Why use `subprocess.run(['cmd', '/c'])`? See...
 "Issues with commands through Python's subprocess module"
-... in the working notes.
+... in "https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md".
 '''
 
 #================================================

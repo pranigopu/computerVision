@@ -6,8 +6,8 @@
 
 - [Learning outcomes](#learning-outcomes)
 - [Resources](#resources)
-- [Key packages used](#key-packages-used)
-  - [`ffmpeg`](#ffmpeg)
+- [Packages useful for video processing](#packages-useful-for-video-processing)
+  - [`ffmpeg-python` (imported as `ffmpeg`)](#ffmpeg-python-imported-as-ffmpeg)
   - [`subprocess`](#subprocess)
   - [OpenCV](#opencv)
 
@@ -25,9 +25,11 @@ Using Python:
 # Resources
 - [_Video Data Processing with Python and OpenCV_ by Rob Mulla](https://www.youtube.com/watch?v=AxIc-vGaHQ0)
 
-# Key packages used
-## `ffmpeg`
-FFmpeg (Fast Forward Moving Picture Experts Group) is a free and open source software project containing a suite of libraries and programs for handling multimedia files and streams, including video and audio. `ffmpeg` in Python is a [Python binding](https://github.com/pranigopu/computerVision/definitions#language-binding) for FFmpeg, and provides both [synchronous and asynchronous APIs](https://github.com/pranigopu/computerVision/definitions#api).
+# Packages useful for video processing
+## `ffmpeg-python` (imported as `ffmpeg`)
+FFmpeg (Fast Forward Moving Picture Experts Group) is a free and open source software project containing a suite of libraries and programs for handling multimedia files and streams, including video and audio. `ffmpeg-python` in Python is a [Python binding](https://github.com/pranigopu/computerVision/definitions#language-binding) for FFmpeg. Note that `python-ffmpeg` (also imported as `ffmpeg`) is another Python binding for FFmpeg. Both bindings provide [synchronous and asynchronous APIs](https://github.com/pranigopu/computerVision/definitions#api). To install `ffmpeg-python`, enter `pip install ffmpeg-python` in the terminal/command prompt.
+
+**NOTE**: _Installing both_ `ffmpeg-python` _and_ `python-ffmpeg` _is ill-advised since both are identified during imports as_ `ffmpeg` _(which means you would be using only the first Python binding installed). If you have one installed but want to switch to another, uninstall the one you currently have first._
 
 > **References**:
 >
