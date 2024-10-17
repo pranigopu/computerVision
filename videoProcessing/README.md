@@ -13,6 +13,10 @@
 
 ---
 
+_For working notes detailing technical details, problems and solutions based on personal experiences, click_ [_here_](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md).
+
+---
+
 # Learning outcomes
 Using Python:
 
