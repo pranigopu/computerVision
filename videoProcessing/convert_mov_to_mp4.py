@@ -36,7 +36,7 @@ subprocess.run(['ffmpeg', '-i', inputFile, outputFile])
 The advantage of version 1 is that you only need to install
 the Python binding for FFmpeg (here, the Python binding used
 was `ffmpeg-python`, but there are others available), which
-is very easy to do using PIP (e.g. `pip install ffmpeg-python`).
+is very easy to do using pip (e.g. `pip install ffmpeg-python`).
 Version 2 is convenient if you already have FFmpeg installed
 in your system; however installing FFmpeg directly into your
 system is somewhat more complicated.
