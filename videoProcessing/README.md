@@ -20,4 +20,4 @@ Using Python:
 
 # Resources
 - [_Video Data Processing with Python and OpenCV_ by Rob Mulla](https://www.youtube.com/watch?v=AxIc-vGaHQ0)
-- [Working Notes](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md) <details><summary>what is this?</summary>A document containing working notes on technical details, problems and solutions based on personal experiences.</details>
+- [Working Notes](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md) <details><summary>What is this?</summary>A document containing working notes on technical details, problems and solutions based on personal experiences.</details>

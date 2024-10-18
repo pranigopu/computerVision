@@ -15,6 +15,7 @@ For notes on my use of `sys` here, see...
 
 #================================================
 # Version 1
+
 import ffmpeg # Only version 1 needs this import
 name = sys.argv[1]
 print(name, type(name))
@@ -41,6 +42,7 @@ subprocess.run(['ffmpeg', '-i', inputFile, outputFile])
 
 #================================================
 # Comparing the two code versions
+
 '''
 The advantage of version 1 is that you only need to install
 the Python binding for FFmpeg (here, the Python binding used

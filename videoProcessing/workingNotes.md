@@ -15,6 +15,11 @@
   - [Issue history](#issue-history)
   - [An easy solution](#an-easy-solution)
 - [Use of `sys` in my video processing programs](#use-of-sys-in-my-video-processing-programs)
+- [OpenCV for video processing in Python](#opencv-for-video-processing-in-python)
+  - [Obtaining video metadata](#obtaining-video-metadata)
+  - [`cv2.VideoCapture`](#cv2videocapture)
+    - [Retrieving metadata](#retrieving-metadata)
+    - [Releasing a `cv2.VideoCapture` object](#releasing-a-cv2videocapture-object)
 
 ---
 
@@ -147,3 +152,18 @@ Hence, a solution was to prefix the commands with `cmd /c` (note that `cmd` is a
 I aim to pass the file name (without extension) as an argument to a video-processing Python script, so that I can make the script more generalisable while also being able to use the command history to access previous calls to the Python script (without having to re-enter the file name in, for example, a runtime input). To learn more about the `sys` module, click [here](https://github.com/pranigopu/computerVision/blob/main/information.md#sys).
 
 Specifically for my purpose, `sys.argv[0]` gives the first string after the `python` command, which would be the Python file's name. `sys.argv[1]` gives the second string after the `python` command, which would be any argument passed after the Python file's name. Note that all command line arguments are taken as strings.
+
+# OpenCV for video processing in Python
+## Obtaining video metadata
+There exist constants in `cv2` that refer to video properties (e.g. `cv2.CAP_PROP_FRAME_COUNT`). These constants are integers, which means they are indices wherein each index corresponds to a particular property. How these indices can be used to retrieve the metadata of a video is demonstrated in [`read_metadata.py`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/read_metadata.py).
+
+## `cv2.VideoCapture`
+> **Key reference**: [cv::VideoCapture Class Reference (documentation)](https://docs.opencv.org/3.4/d8/dfe/classcv_1_1VideoCapture.html)
+
+### Retrieving metadata
+Use to `.get` method, passing the index corresponding to the desired property, as demonstrated in [`read_metadata.py`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/read_metadata.py). Note that return values are floating point numbers, even for integer-valued properties like frame count.
+
+### Releasing a `cv2.VideoCapture` object
+Suppose `capture` is a `cv2.VideoCapture` object, which means it refers to either a video file or a data steam from a capturing device. Then, `capture.release()` closes the video file or capturing device (note that this method is automatically called when a `cv2.VideoCapture` object is destroyed). This method also deallocates memory and clears `capture` pointer.
+
+> **Reference**: [`release()` (`VideoCapture` documentation)](https://docs.opencv.org/3.4/d8/dfe/classcv_1_1VideoCapture.html#afb4ab689e553ba2c8f0fec41b9344ae6)
