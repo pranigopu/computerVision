@@ -4,6 +4,7 @@
 
 **Contents**:
 
+- [Use of `sys` in my video processing programs](#use-of-sys-in-my-video-processing-programs)
 - [Installing FFmpeg](#installing-ffmpeg)
   - [Option 1: Use a Python binding](#option-1-use-a-python-binding)
   - [Option 2: Install FFmpeg in the system (Windows)](#option-2-install-ffmpeg-in-the-system-windows)
@@ -12,6 +13,11 @@
   - [An easy solution](#an-easy-solution)
 
 ---
+
+# Use of `sys` in my video processing programs
+I aim to pass the file name (without extension) as an argument to a video-processing Python script, so that I can make the script more generalisable while also being able to use the command history to access previous calls to the Python script (without having to re-enter the file name in, for example, a runtime input). To learn more about the `sys` module, click [here](https://github.com/pranigopu/computerVision/blob/main/information.md#sys).
+
+Specifically for my purpose, `sys.argv[0]` gives the first string after the `python` command, which would be the Python file's name. `sys.argv[1]` gives the second string after the `python` command, which would be any argument passed after the Python file's name. Note that all command line arguments are taken as strings.
 
 # Installing FFmpeg
 ## Option 1: Use a Python binding
