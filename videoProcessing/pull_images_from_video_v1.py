@@ -14,7 +14,7 @@ For notes on my use of `sys` here, see...
 
 #================================================
 fileName = sys.argv[1] + '.mp4'
-capture = cv2.VideoCapture(fileName)
+capture = cv2.VideoCapture(fileName) # Opening and capturing the frames of the vide file
 moreFramesToRead = True
 
 #------------------------------------
