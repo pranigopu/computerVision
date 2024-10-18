@@ -12,4 +12,6 @@ For notes on my use of `sys` here, see...
 '''
 
 #================================================
-capture = cv2.VideoCapture(sys.argv[1])
+fileName = sys.argv[1] + 'mp4'
+capture = cv2.VideoCapture(fileName)
+print(fileName, cv2.CAP_PROP_FRAME_COUNT)

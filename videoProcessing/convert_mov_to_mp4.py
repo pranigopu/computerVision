@@ -4,7 +4,6 @@
 # NOTE: Both the versions achieve the same effect.
 
 import subprocess
-import ffmpeg
 
 # EXTRA: For passing argument to this script in command line:
 import sys
@@ -16,6 +15,7 @@ For notes on my use of `sys` here, see...
 
 #================================================
 # Version 1
+import ffmpeg # Only version 1 needs this import
 name = sys.argv[1]
 print(name, type(name))
 inputFile = name + '.mov'
@@ -31,7 +31,7 @@ NOTE: Why use `subprocess.run(['cmd', '/c'])`? See...
 
 #================================================
 # Version 2
-# The same as version 1 except for the last line.
+# The same as version 1 except for the first and last lines.
 '''
 name = sys.argv[1]
 inputFile = name + '.mov'

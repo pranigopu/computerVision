@@ -4,20 +4,49 @@
 
 **Contents**:
 
-- [Use of `sys` in my video processing programs](#use-of-sys-in-my-video-processing-programs)
+- [Packages useful for video processing](#packages-useful-for-video-processing)
+  - [`ffmpeg-python` (imported as `ffmpeg`)](#ffmpeg-python-imported-as-ffmpeg)
+  - [`subprocess`](#subprocess)
+  - [OpenCV](#opencv)
 - [Installing FFmpeg](#installing-ffmpeg)
   - [Option 1: Use a Python binding](#option-1-use-a-python-binding)
   - [Option 2: Install FFmpeg in the system (Windows)](#option-2-install-ffmpeg-in-the-system-windows)
 - [Issues with commands through Python's subprocess module](#issues-with-commands-through-pythons-subprocess-module)
   - [Issue history](#issue-history)
   - [An easy solution](#an-easy-solution)
+- [Use of `sys` in my video processing programs](#use-of-sys-in-my-video-processing-programs)
 
 ---
 
-# Use of `sys` in my video processing programs
-I aim to pass the file name (without extension) as an argument to a video-processing Python script, so that I can make the script more generalisable while also being able to use the command history to access previous calls to the Python script (without having to re-enter the file name in, for example, a runtime input). To learn more about the `sys` module, click [here](https://github.com/pranigopu/computerVision/blob/main/information.md#sys).
+# Packages useful for video processing
+## `ffmpeg-python` (imported as `ffmpeg`)
+FFmpeg (Fast Forward Moving Picture Experts Group) is a free and open source software project containing a suite of libraries and programs for handling multimedia files and streams, including video and audio. `ffmpeg-python` in Python is a [Python binding](https://github.com/pranigopu/computerVision/definitions#language-binding) for FFmpeg. Note that `python-ffmpeg` (also imported as `ffmpeg`) is another Python binding for FFmpeg. Both bindings provide [synchronous and asynchronous APIs](https://github.com/pranigopu/computerVision/definitions#api). To install `ffmpeg-python`, enter `pip install ffmpeg-python` in the terminal/command prompt.
 
-Specifically for my purpose, `sys.argv[0]` gives the first string after the `python` command, which would be the Python file's name. `sys.argv[1]` gives the second string after the `python` command, which would be any argument passed after the Python file's name. Note that all command line arguments are taken as strings.
+**NOTE**: _Installing both_ `ffmpeg-python` _and_ `python-ffmpeg` _is ill-advised since both are identified during imports as_ `ffmpeg` _(which means you would be using only the first Python binding installed). If you have one installed but want to switch to another, uninstall the one you currently have first._
+
+> **References**:
+>
+> - [**FFmpeg.org**](https://ffmpeg.org/)
+> - [`python-ffmpeg` (documentation)](https://pypi.org/project/python-ffmpeg/)
+
+## `subprocess`
+A built-in module in Python that allows you to spawn child processes (subprocesses), connect to their input/output/error [pipes](https://github.com/pranigopu/computerVision/definitions#pipe) and obtain their return codes (e.g. returned status, returned value, etc.). It is a valuable tool to execute external functions and commands in Python instead of manually running them in a terminal application (e.g. video format conversion commands). Thus, it seamlessly integrates external programming into one's Python workflow.
+
+> **References**:
+>
+> - [_Python subprocess module_ from **GeeksForGeeks.org**](https://www.geeksforgeeks.org/python-subprocess-module/)
+> - [`subprocess` — Subprocess management (documentation)](https://docs.python.org/3/library/subprocess.html)
+
+## OpenCV
+OpenCV (i.e. Open Source Computer Vision) is an open source computer vision library, originally developed by Intel but now operated by the non-profit Open Source Vision Foundation (OpenCV Foundation). It contains functions for accessing and processing image and video data as well. The `opencv-python` is a library of pre-built CPU-only OpenCV packages for Python, i.e. it has binary packages that already contain statically built OpenCV binaries (hence, OpenCV need not be installed in your system on its own).
+
+**NOTE**: `opencv-python` _is to be imported as_ `cv2`.
+
+> **References**:
+>
+> - [**OpenCV.org**](https://opencv.org/)
+> - [`opencv-python` (documentation)](https://pypi.org/project/opencv-python/)
+> - [_OpenCV Tutorial in Python_ from **GeeksForGeeks.org**](https://www.geeksforgeeks.org/opencv-python-tutorial/)
 
 # Installing FFmpeg
 ## Option 1: Use a Python binding
@@ -113,3 +142,8 @@ subprocess.run(['cmd', '/c', ''])
 ```
 
 Hence, a solution was to prefix the commands with `cmd /c` (note that `cmd` is a command while `/c` is an option within this command); to see information on `cmd`, enter `cmd /?` in Command Prompt. According to this information, `cmd` starts a new instance of the Windows XP command interpreter, whereas `/c` carries out the command specified by the following string and then terminates. This fixed the issue previously seen.
+
+# Use of `sys` in my video processing programs
+I aim to pass the file name (without extension) as an argument to a video-processing Python script, so that I can make the script more generalisable while also being able to use the command history to access previous calls to the Python script (without having to re-enter the file name in, for example, a runtime input). To learn more about the `sys` module, click [here](https://github.com/pranigopu/computerVision/blob/main/information.md#sys).
+
+Specifically for my purpose, `sys.argv[0]` gives the first string after the `python` command, which would be the Python file's name. `sys.argv[1]` gives the second string after the `python` command, which would be any argument passed after the Python file's name. Note that all command line arguments are taken as strings.
