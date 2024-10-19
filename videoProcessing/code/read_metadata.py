@@ -16,7 +16,7 @@ For notes on my use of `sys` here, see...
 '''
 
 #================================================
-fileName = sys.argv[1] + '.mp4'
+fileName = '../videos/' + sys.argv[1] + '.mp4'
 capture = cv2.VideoCapture(fileName)
 
 # The following is done for  convenience in looping over information:

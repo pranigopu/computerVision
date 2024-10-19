@@ -16,7 +16,7 @@ For notes on my use of `sys` here, see...
 from math import sqrt, ceil
 
 #================================================
-fileName = sys.argv[1] + '.mp4'
+fileName = '../videos/' + sys.argv[1] + '.mp4'
 numFramesToShow = int(sys.argv[2])
 capture = cv2.VideoCapture(fileName) # Opening and capturing the frames of the vide file
 numFrames = int(capture.get(cv2.CAP_PROP_FRAME_COUNT))

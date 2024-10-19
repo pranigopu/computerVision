@@ -16,13 +16,13 @@ For notes on my use of `sys` here, see...
 #================================================
 # Getting the annotations data
 
-data = pd.read_csv('annotations.csv')
+data = pd.read_csv('../annotations.csv')
 maxFrameIndex = max(data['frameIndex'])
 
 #================================================
 # Getting the video file
 
-fileName = sys.argv[1] + '.mp4'
+fileName = '../videos/' + sys.argv[1] + '.mp4'
 capture = cv2.VideoCapture(fileName)
 
 #================================================

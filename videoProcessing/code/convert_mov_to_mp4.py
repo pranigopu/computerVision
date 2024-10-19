@@ -17,10 +17,8 @@ For notes on my use of `sys` here, see...
 # Version 1
 
 import ffmpeg # Only version 1 needs this import
-name = sys.argv[1]
-print(name, type(name))
-inputFile = name + '.mov'
-outputFile = name + '.mp4'
+inputFile = '../videos/' + sys.argv[1] + '.mov'
+outputFile = '../videos/' + sys.argv[1] + '.mp4'
 subprocess.run(['cmd', '/c'])
 ffmpeg.input(inputFile).output(outputFile).run()
 
@@ -34,9 +32,8 @@ NOTE: Why use `subprocess.run(['cmd', '/c'])`? See...
 # Version 2
 # The same as version 1 except for the first and last lines.
 '''
-name = sys.argv[1]
-inputFile = name + '.mov'
-outputFile = name + '.mp4'
+inputFile = '../data/' + sys.argv[1] + '.mov'
+outputFile = '../data/' + sys.argv[1] + '.mp4'
 subprocess.run(['ffmpeg', '-i', inputFile, outputFile])
 '''
 

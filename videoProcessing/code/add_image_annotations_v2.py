@@ -16,13 +16,13 @@ For notes on my use of `sys` here, see...
 #================================================
 # Getting the annotations data
 
-data = pd.read_csv('annotations.csv')
+data = pd.read_csv('../annotations.csv')
 maxFrameIndex = max(data['frameIndex'])
 
 #================================================
 # The following code is from `add_image_annotations_v1.py` (see this source file for clarity on the code's logic)
 
-fileName = sys.argv[1] + '.mp4'
+fileName = '../videos/' + sys.argv[1] + '.mp4'
 capture = cv2.VideoCapture(fileName)
 numFrames = capture.get(cv2.CAP_PROP_FRAME_COUNT)
 multiplier = round(numFrames / maxFrameIndex)
