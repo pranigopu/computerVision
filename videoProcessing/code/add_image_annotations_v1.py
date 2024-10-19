@@ -38,14 +38,13 @@ used to obtain frame numbers from frame indices. Note that frame
 numbers are necessary for us to navigate the video effectively.
 '''
 numFrames = capture.get(cv2.CAP_PROP_FRAME_COUNT)
-multiplier = round(numFrames / maxFrameIndex)
+multiplier = numFrames / maxFrameIndex
 
 #================================================
 # Retrieving the image of a particular frame in the video
 
 chosenFrameIndex = int(sys.argv[2])
 chosenFrameNumber = round(chosenFrameIndex * multiplier)
-capture = cv2.VideoCapture(fileName)
 for frame in range(chosenFrameNumber):
     moreFramesToRead, image = capture.read()
     if not moreFramesToRead:

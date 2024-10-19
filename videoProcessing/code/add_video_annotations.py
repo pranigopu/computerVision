@@ -62,7 +62,7 @@ frameWidth = int(capture.get(cv2.CAP_PROP_FRAME_WIDTH))
 # NOTE: The above need to be integers to be valid arguments in the video writer initialiser
 fps = capture.get(cv2.CAP_PROP_FPS)
 # Creating the video writer object:
-outputFileName = '../videos/0001542f-7c670be8--annotated.mp4'
+outputFileName = '../videos/' + sys.argv[1] + '--annotated.mp4'
 videoCodec = 'mp4v'
 videoCodecFourccCode = cv2.VideoWriter.fourcc(*videoCodec)
 # NOTE 1: `*` as used here is the unpacking operation; to learn more, see: https://github.com/pranigopu/computerVision/blob/main/information.md#unpacking-operation
