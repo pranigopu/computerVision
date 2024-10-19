@@ -6,7 +6,7 @@
 
 - [Learning outcomes](#learning-outcomes)
 - [Resources](#resources)
-- [About the dataset](#about-the-dataset)
+- [About the annotations and video used](#about-the-annotations-and-video-used)
 - [Organised view of the code](#organised-view-of-the-code)
 
 ---
@@ -22,9 +22,10 @@ Using Python:
 
 # Resources
 - [_Video Data Processing with Python and OpenCV_ by Rob Mulla](https://www.youtube.com/watch?v=AxIc-vGaHQ0)
-- [Working Notes (my personal notes for tips, issues and solutions)](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md)
+- [`workingNotes.md` (my personal notes for tips, issues and solutions)](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md)
+- [_Driving Video with Object Tracking_ dataset by Rob Mulla from **Kaggle.com**](https://www.kaggle.com/datasets/robikscube/driving-video-with-object-tracking)
 
-# About the dataset
+# About the annotations and video used
 The annotations and video were taken from the [_Driving Video with Object Tracking_ dataset by Rob Mulla from **Kaggle.com**](https://www.kaggle.com/datasets/robikscube/driving-video-with-object-tracking). I have downloaded only one video, namely [`0001542f-7c670be8.mov`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/videos/0001542f-7c670be8.mov). Also, I have renamed the CSV annotations file to [`annotations.csv`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/annotations.csv) and, to save space, I have removed all rows pertaining to videos other than `0001542f-7c670be8.mov`.
 
 # Organised view of the code
