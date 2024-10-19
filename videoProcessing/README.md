@@ -22,7 +22,7 @@ Using Python:
 
 # Resources
 - [_Video Data Processing with Python and OpenCV_ by Rob Mulla](https://www.youtube.com/watch?v=AxIc-vGaHQ0)
-- <details><summary><a href="https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md">Working Notes</a></summary>A document containing working notes on technical details, problems and solutions based on personal experiences.</details>
+- [Working Notes (my personal notes for tips, issues and solutions)](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md)
 
 # About the dataset
 The annotations and video were taken from the [_Driving Video with Object Tracking_ dataset by Rob Mulla from **Kaggle.com**](https://www.kaggle.com/datasets/robikscube/driving-video-with-object-tracking). I have downloaded only one video, namely [`0001542f-7c670be8.mov`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/videos/0001542f-7c670be8.mov). Also, I have renamed the CSV annotations file to [`annotations.csv`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/annotations.csv) and, to save space, I have removed all rows pertaining to videos other than `0001542f-7c670be8.mov`.
