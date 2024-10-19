@@ -67,7 +67,7 @@ videoCodec = 'mp4v'
 videoCodecFourccCode = cv2.VideoWriter.fourcc(*videoCodec)
 # NOTE 1: `*` as used here is the unpacking operation; to learn more, see: https://github.com/pranigopu/computerVision/blob/main/information.md#unpacking-operation
 # NOTE 2: `cv2.VideoWriter.fourcc` accepts four separate character arguments which it concatenates into a FOURCC code, which it uses to return a corresponding numeric version of the code
-outputVideo = cv2.VideoWriter(outputFileName, videoCodecFourccCode, fps, (frameWidth, frameHeight))
+output = cv2.VideoWriter(outputFileName, videoCodecFourccCode, fps, (frameWidth, frameHeight))
 
 #================================================
 # Adding annotations for all frames
@@ -90,7 +90,7 @@ for frame in tqdm.tqdm(range(int(numFrames))):
             cv2.rectangle(image, point1, point2, colour, 3)
     except:
         pass
-    outputVideo.write(image)
+    output.write(image)
 
 capture.release()
-outputVideo.release()
+output.release()

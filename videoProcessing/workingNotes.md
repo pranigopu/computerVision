@@ -9,8 +9,8 @@
   - [`subprocess`](#subprocess)
   - [OpenCV](#opencv)
 - [Installing FFmpeg](#installing-ffmpeg)
-  - [Option 1: Use a Python binding](#option-1-use-a-python-binding)
-  - [Option 2: Install FFmpeg in the system (Windows)](#option-2-install-ffmpeg-in-the-system-windows)
+  - [Install FFmpeg in the system (Windows)](#install-ffmpeg-in-the-system-windows)
+  - [Optional use of a Python binding](#optional-use-of-a-python-binding)
 - [Issues with commands through Python's subprocess module](#issues-with-commands-through-pythons-subprocess-module)
   - [Issue history](#issue-history)
   - [An easy solution](#an-easy-solution)
@@ -25,7 +25,7 @@
 
 # Packages useful for video processing
 ## `ffmpeg-python` (imported as `ffmpeg`)
-FFmpeg (Fast Forward Moving Picture Experts Group) is a free and open source software project containing a suite of libraries and programs for handling multimedia files and streams, including video and audio. `ffmpeg-python` in Python is a [Python binding](https://github.com/pranigopu/computerVision/definitions#language-binding) for FFmpeg. Note that `python-ffmpeg` (also imported as `ffmpeg`) is another Python binding for FFmpeg. Both bindings provide [synchronous and asynchronous APIs](https://github.com/pranigopu/computerVision/definitions#api). To install `ffmpeg-python`, enter `pip install ffmpeg-python` in the terminal/command prompt.
+FFmpeg (Fast Forward Moving Picture Experts Group) is a free and open source software project containing a suite of libraries and programs for handling (i.e. recording, converting and streaming) multimedia files, i.e. video and audio files. `ffmpeg-python` in Python is a [Python binding](https://github.com/pranigopu/computerVision/definitions#language-binding) for FFmpeg. Note that `python-ffmpeg` (also imported as `ffmpeg`) is another Python binding for FFmpeg. Both bindings provide [synchronous and asynchronous APIs](https://github.com/pranigopu/computerVision/definitions#api). To install `ffmpeg-python`, enter `pip install ffmpeg-python` in the terminal/command prompt.
 
 **NOTE**: _Installing both_ `ffmpeg-python` _and_ `python-ffmpeg` _is ill-advised since both are identified during imports as_ `ffmpeg` _(which means you would be using only the first Python binding installed). If you have one installed but want to switch to another, uninstall the one you currently have first._
 
@@ -54,10 +54,7 @@ OpenCV (i.e. Open Source Computer Vision) is an open source computer vision libr
 > - [_OpenCV Tutorial in Python_ from **GeeksForGeeks.org**](https://www.geeksforgeeks.org/opencv-python-tutorial/)
 
 # Installing FFmpeg
-## Option 1: Use a Python binding
-I used `ffmpeg-python`, but you can also use `python-ffmpeg`, which is a different implementation for a similar purpose. To install `ffmpeg-python`, enter `pip install ffmpeg-python` in the terminal/command prompt (make sure the Python package installed `pip` is installed first). Of course, with this option, you can access FFmpeg's functionalities only through Python.
-
-## Option 2: Install FFmpeg in the system (Windows)
+## Install FFmpeg in the system (Windows)
 **FFmpeg.org** only provides source code, which means you must seek an FFmpeg build if you want FFmpeg compiled and ready. For a Windows build, check `ffmpeg-release-full.7z` [here](https://www.gyan.dev/ffmpeg/builds/#release-builds). Notice the `.7z` extension; this is the archive format of [7-Zip](https://www.7-zip.org/), a free and open-source file archiver. Hence, to extract the aforementioned FFmpeg build, install 7-Zip and use it on the build by right-clicking on the build's ZIP file and selecting the 7-Zip option (which becomes available once 7-Zip is installed). Once extracted, you get an extracted `ffmpeg-release-full.7z` folder: rename it to `FFmpeg` and move it to the hard-drive's root directory. Then, to make the FFmpeg's functionalities accessible to a script or a command line interface (e.g. through Command Prompt), you must set the [`PATH` variable](https://github.com/pranigopu/computerVision/information.md#path-variable-in-windows) (an environment variable in Windows) to the path of the FFmpeg build's executables. This can be done in Windows command line as follows:
 
 ```
@@ -82,6 +79,9 @@ Doing this will make `ffmpeg` a usable command.
 > - [_Easily Download and Install FFmpeg on a Windows PC_ by Nicole Levine from **wikiHow.com**](https://www.wikihow.com/Install-FFmpeg-on-Windows)
 > - [7-zip.org](https://www.7-zip.org/)
 > - [_FFmpeg Builds - binaries for Windows_ by Gyan Doshi from **CODEX FFMPEG**](https://www.gyan.dev/ffmpeg/builds/#release-builds)
+
+## Optional use of a Python binding
+I used `ffmpeg-python`, but you can also use `python-ffmpeg`, which is a different implementation for a similar purpose. To install `ffmpeg-python`, enter `pip install ffmpeg-python` in the terminal/command prompt (make sure the Python package installed `pip` is installed first). I think most (if not all) such bindings act only as wrappers, which means FFmpeg must be installed in your system anyway.
 
 # Issues with commands through Python's subprocess module
 ## Issue history

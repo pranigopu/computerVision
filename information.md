@@ -13,12 +13,11 @@
   - [`PATH` variable in Windows](#path-variable-in-windows)
   - [Percent character in Windows command line](#percent-character-in-windows-command-line)
 - [Multimedia-related](#multimedia-related)
-  - [Video and audio codecs](#video-and-audio-codecs)
+  - [FFmpeg](#ffmpeg)
   - [FOURCC](#fourcc)
+  - [Constant rate factor (CRF)](#constant-rate-factor-crf)
 - [General](#general)
   - [7-Zip](#7-zip)
-  - [Codebase](#codebase)
-  - [Runtime environment](#runtime-environment)
 
 ---
 
@@ -29,7 +28,7 @@
 > **Reference**: [`pip` (documentation)](https://pypi.org/project/pip/)
 
 ## `sys`
-The `sys` module in Python provides various functions and variables that are used to manipulate different parts of the Python [runtime environment](#runtime-environment), i.e. the software platform through which Python scripts are run. It allows operating directly on the interpreter as it provides access to the variables and functions that interact directly with the interpreter. For example, the `sys` module provides the variables `stdin`, `stdout` and `stderr` for better control over input or output. Specifically, `stdin` can be used to get input from the command line directly.
+The `sys` module in Python provides various functions and variables that are used to manipulate different parts of the Python [runtime environment](https://github.com/pranigopu/computerVision/blob/main/definitions.md#runtime-environment), i.e. the software platform through which Python scripts are run. It allows operating directly on the interpreter as it provides access to the variables and functions that interact directly with the interpreter. For example, the `sys` module provides the variables `stdin`, `stdout` and `stderr` for better control over input or output. Specifically, `stdin` can be used to get input from the command line directly.
 
 > **Reference**: [_Python sys Module_ from **GeeksForGeeks.org**](https://www.geeksforgeeks.org/python-sys-module/)
 
@@ -92,27 +91,24 @@ By default, `PATH` only points to a few Windows folders, but more can be added. 
 See the section "How the CMD shell command line parser evaluates variables" in [`syntax-percent.html` from **ss64.com**](https://ss64.com/nt/syntax-percent.html). To focus on a specific usage that I found useful to know about, if CMD finds a percent character (i.e. the % character), if the next character is anything other than another percent character, CMD treats everything up to the next percent sign as the name of a variable and replaces it with the value of that variable. For example, `%PATH%` replaces the name of the `PATH` variable (an environment variable in Windows) with its value (which is a string of folder paths separated by semicolons).
 
 # Multimedia-related
-## Video and audio codecs
-**Codec = Encoder + Decoder**
+## FFmpeg
+FFmpeg (Fast Forward Moving Picture Experts Group) is a free and open source software project containing a suite of libraries and programs for handling (i.e. recording, converting and streaming) multimedia files, i.e. video and audio files.
 
-A codec is software or hardware that compresses and decompresses digital video or audio (video codec for video and audio codec for audio). In the context of video/audio compression, codec is a portmanteau of encoder and decoder, while a device that only compresses is typically called an encoder, and one that only decompresses is a decoder.
-
-**NOTE**: _The compression is typically lossy and thus the compressed video/audio file lacks some information present in the original file. Hence, the decompressed file has lower quality than the original uncompressed file because there is insufficient information to accurately reconstruct the original file._
-
-- Audio codec examples: AAC, MP3, FLAC, WAV
-- Video codec examples: H.264 (AVC), H.265 (HEVC), VP9, AV1
-
-> **References**
->
-> - [_Video codec_ from **Wikipedia**](https://en.wikipedia.org/wiki/Video_codec)
-> - [_Unlocking the Mystery of Codecs: What You Need to Know Now_ by Paul Gill from **Lifewire.com**](https://www.lifewire.com/what-exactly-is-odec-2483426)
-> - [_AAC, MP3, FLAC: Deep Dive into Audio Codec Nuances_ by Anne from **coconut.co**](https://www.coconut.co/articles/aac-mp3-flac-audio-codec-guide)
-> - [_Understanding Codecs: A Beginner’s Guide to Audio & Video Conversion_ from **mediamojo.com**](https://themediamojo.com/index.php/codecs)
+- [**FFmpeg.org**](https://ffmpeg.org/)
+- [FFmpeg Bug Tracker and Wiki](https://trac.ffmpeg.org/wiki)
 
 ## FOURCC
 **_Also wrttten as 4CC_**
 
 FOURCC is short for "four character code", and is an identifier for a video codec, compression format, color or pixel format used in media files. Each for the four characters in this context is a 8 bits (i.e. 1 byte) value, thus a FOURCC always takes up exatly 32 bits (i.e. 4 bytes) in a file. The four characters in a FOURCC is generally limited to be within the human-readable characters in the ASCII table so that it is easy to convey and communicate what the FOURCCs are within a media file.
+
+## Constant rate factor (CRF)
+The constant rate factor (CRF) is the default quality and frame/sampling rate control setting for the x264 and x265 encoders (it is also available for the libvpx encoder). With x264 and x265, you can set the values between 0 and 51, where lower values would result in better quality at the expense of higher file sizes, while higher values result in more compression, which can lead to quality degradation after some point. For x264, sane values are between 18 and 28. The default is 23, so you can use this as a starting point.
+
+> **References**:
+> 
+> - [_CRF Guide (Constant Rate Factor in x264, x265 and libvpx)_ by Werner Robitza a.k.a. slhck](https://slhck.info/video/2017/02/24/crf-guide.html)
+> - ["Constant Rate Factor (CRF)" from _H.264 Video Encoding Guide_ from **trac.ffmpeg.org**](https://trac.ffmpeg.org/wiki/Encode/H.264#crf)
 
 # General
 ## 7-Zip
@@ -122,25 +118,3 @@ FOURCC is short for "four character code", and is an identifier for a video code
 > 
 > - [`7-Zip` from **Wikipedia**](https://en.wikipedia.org/wiki/7-Zip)
 > [7-zip.org](https://www.7-zip.org/)
-
-## Codebase
-A codebase is the complete collection of source code used to build an application or project. It includes all the code, configurations, scripts, and documentation required to define and run the application.
-
-> **Reference**: [_What is a Codebase_ from **PhoenixNap.com**](https://phoenixnap.com/glossary/what-is-a-codebase)
-
-## Runtime environment
-_Also called runtime system._
-
-A software platform that provides an environment for executing code; hence, it is the hardware and software infrastructure that supports the running of a particular [codebase](#codebase) in real-time. Most programming languages have some form of runtime environment in which programs run, which addresses a number of issues that may include (among others):
-
-- Application memory management
-- How the program accesses variables
-- Mechanisms for passing parameters between procedures
-- Interfacing with the operating system (OS)
-
-The compiler or interpreter makes assumptions depending on the nature of the runtime environment used to generate correct code. Typically, the runtime environment has some responsibility in setting up and managing the stack and heap (which are data structures respectively used to keep track function calls and allocate memory dynamically). The runtime environment may also have features such as garbage collection (i.e. the management of unused memory), threads (i.e. a well-defined segment of a process) or other dynamic features built into the language.
-
-> **Reference**:
->
-> - [_Runtime system_ from **Wikipedia**](https://en.wikipedia.org/wiki/Runtime_system)
-> - [_Runtime Environment_ by Margaret Rouse from **Technopedia**](https://www.techopedia.com/definition/5466/runtime-environment-rte)
