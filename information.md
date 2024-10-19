@@ -7,10 +7,14 @@
 - [Python-related](#python-related)
   - [`pip`](#pip)
   - [`sys`](#sys)
+  - [Unpacking operation](#unpacking-operation)
 - [Windows-related](#windows-related)
   - [Environment variables in Windows](#environment-variables-in-windows)
   - [`PATH` variable in Windows](#path-variable-in-windows)
   - [Percent character in Windows command line](#percent-character-in-windows-command-line)
+- [Multimedia-related](#multimedia-related)
+  - [Video and audio codecs](#video-and-audio-codecs)
+  - [FOURCC](#fourcc)
 - [General](#general)
   - [7-Zip](#7-zip)
   - [Codebase](#codebase)
@@ -28,6 +32,42 @@
 The `sys` module in Python provides various functions and variables that are used to manipulate different parts of the Python [runtime environment](#runtime-environment), i.e. the software platform through which Python scripts are run. It allows operating directly on the interpreter as it provides access to the variables and functions that interact directly with the interpreter. For example, the `sys` module provides the variables `stdin`, `stdout` and `stderr` for better control over input or output. Specifically, `stdin` can be used to get input from the command line directly.
 
 > **Reference**: [_Python sys Module_ from **GeeksForGeeks.org**](https://www.geeksforgeeks.org/python-sys-module/)
+
+## Unpacking operation
+The unpacking operation is the asterisk (*) prefixed to a list, tuple or string so that its elements can be passed as separate parameters to a function. Examples of usage are as follows:
+
+1.<br>
+
+```python
+def myFunction(a, b, c):
+  print(a + b + c)
+
+myList = [1, 2, 3]
+myFunction(*myList)
+```
+
+Output:
+
+`6`
+
+2.<br>
+
+```python
+def myFunction(a, b, c):
+  print(c + b + c)
+
+myString = 'cat'
+myFunction(*myString)
+```
+
+Output:
+
+`tac`
+
+> **References**
+>
+> - [_Packing and Unpacking Arguments in Python_ from **GeeksForGeeks.org**](https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/)
+> - [_How to Use the Unpacking Operators (*, **) in Python?_ by Daniel Diaz from **geekflare.com**](https://geekflare.com/python-unpacking-operators/)
 
 # Windows-related
 ## Environment variables in Windows
@@ -50,6 +90,29 @@ By default, `PATH` only points to a few Windows folders, but more can be added. 
 **NOTE**: _A CMD shell is an instance of the Windows' command interpreter_ `Cmd.exe`. _Applications like Command Prompt can be used to create a CMD shell and thereby access Windows' command line functionality. For convenience, I shall refer to Windows' command interpreter as CMD._
 
 See the section "How the CMD shell command line parser evaluates variables" in [`syntax-percent.html` from **ss64.com**](https://ss64.com/nt/syntax-percent.html). To focus on a specific usage that I found useful to know about, if CMD finds a percent character (i.e. the % character), if the next character is anything other than another percent character, CMD treats everything up to the next percent sign as the name of a variable and replaces it with the value of that variable. For example, `%PATH%` replaces the name of the `PATH` variable (an environment variable in Windows) with its value (which is a string of folder paths separated by semicolons).
+
+# Multimedia-related
+## Video and audio codecs
+**Codec = Encoder + Decoder**
+
+A codec is software or hardware that compresses and decompresses digital video or audio (video codec for video and audio codec for audio). In the context of video/audio compression, codec is a portmanteau of encoder and decoder, while a device that only compresses is typically called an encoder, and one that only decompresses is a decoder.
+
+**NOTE**: _The compression is typically lossy and thus the compressed video/audio file lacks some information present in the original file. Hence, the decompressed file has lower quality than the original uncompressed file because there is insufficient information to accurately reconstruct the original file._
+
+- Audio codec examples: AAC, MP3, FLAC, WAV
+- Video codec examples: H.264 (AVC), H.265 (HEVC), VP9, AV1
+
+> **References**
+>
+> - [_Video codec_ from **Wikipedia**](https://en.wikipedia.org/wiki/Video_codec)
+> - [_Unlocking the Mystery of Codecs: What You Need to Know Now_ by Paul Gill from **Lifewire.com**](https://www.lifewire.com/what-exactly-is-odec-2483426)
+> - [_AAC, MP3, FLAC: Deep Dive into Audio Codec Nuances_ by Anne from **coconut.co**](https://www.coconut.co/articles/aac-mp3-flac-audio-codec-guide)
+> - [_Understanding Codecs: A Beginner’s Guide to Audio & Video Conversion_ from **mediamojo.com**](https://themediamojo.com/index.php/codecs)
+
+## FOURCC
+**_Also wrttten as 4CC_**
+
+FOURCC is short for "four character code", and is an identifier for a video codec, compression format, color or pixel format used in media files. Each for the four characters in this context is a 8 bits (i.e. 1 byte) value, thus a FOURCC always takes up exatly 32 bits (i.e. 4 bytes) in a file. The four characters in a FOURCC is generally limited to be within the human-readable characters in the ASCII table so that it is easy to convey and communicate what the FOURCCs are within a media file.
 
 # General
 ## 7-Zip

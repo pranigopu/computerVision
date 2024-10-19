@@ -39,7 +39,8 @@ capture.release()
 # Creating a colour map according to categories:
 
 # Using the `review_annotations.py` code, we see that there are 4 categories as mentioned in the colour map...
-colourMap = {'car': (0, 0, 255), 'bus': (0, 255, 0), 'pedestrian': (255, 0, 0), 'bicyle': (255, 255, 0)}
+colourMap = {'car': (0, 0, 255), 'bus': (0, 255, 0), 'pedestrian': (255, 0, 0), 'bicycle': (255, 255, 0)}
+# NOTE: OpenCV images follow the BGR (blue-green-red) colour format
 
 #================================================
 # Adding bounding boxes for the frame at `chosenFrameNumber`
