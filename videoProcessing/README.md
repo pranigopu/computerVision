@@ -6,6 +6,7 @@
 
 - [Learning outcomes](#learning-outcomes)
 - [Resources](#resources)
+- [About the dataset](#about-the-dataset)
 - [Organised view of the code](#organised-view-of-the-code)
 
 ---
@@ -22,6 +23,9 @@ Using Python:
 # Resources
 - [_Video Data Processing with Python and OpenCV_ by Rob Mulla](https://www.youtube.com/watch?v=AxIc-vGaHQ0)
 - <details><summary><a href="https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md">Working Notes</a></summary>A document containing working notes on technical details, problems and solutions based on personal experiences.</details>
+
+# About the dataset
+The annotations and video were taken from the [_Driving Video with Object Tracking_ dataset by Rob Mulla from **Kaggle.com**](https://www.kaggle.com/datasets/robikscube/driving-video-with-object-tracking). I have downloaded only one video, namely [`0001542f-7c670be8.mov`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/videos/0001542f-7c670be8.mov). Also, I have renamed the CSV annotations file to [`annotations.csv`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/annotations.csv) and have removed all rows pertaining to videos other than `0001542f-7c670be8.mov`.
 
 # Organised view of the code
 Each code (except for [`review_annotations.py`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/code/review_annotations.py)) accepts the file name (without extension) as a command line argument, and may accept additional command line arguments, as detailed below. I implemented my code in this way for convenience in rerunning the scripts and for also offering a degree of flexibility. Also for convenience, I have made it so that each program assumes that any video must be taken from and saved to the [`videoProcessing/videos/`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/videos/) subdirectory. In the list below, click the arrow on the left of the file names to see the code's description.
