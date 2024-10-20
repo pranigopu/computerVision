@@ -1,5 +1,7 @@
 <h1>WORKING NOTES</h1>
 
+**_Video Processing_**
+
 ---
 
 **Contents**:
@@ -8,6 +10,7 @@
   - [`ffmpeg-python` (imported as `ffmpeg`)](#ffmpeg-python-imported-as-ffmpeg)
   - [`subprocess`](#subprocess)
   - [OpenCV](#opencv)
+  - [Matplotlib](#matplotlib)
 - [Installing FFmpeg](#installing-ffmpeg)
   - [Install FFmpeg in the system (Windows)](#install-ffmpeg-in-the-system-windows)
   - [Optional use of a Python binding](#optional-use-of-a-python-binding)
@@ -52,6 +55,12 @@ OpenCV (i.e. Open Source Computer Vision) is an open source computer vision libr
 > - [**OpenCV.org**](https://opencv.org/)
 > - [`opencv-python` (documentation)](https://pypi.org/project/opencv-python/)
 > - [_OpenCV Tutorial in Python_ from **GeeksForGeeks.org**](https://www.geeksforgeeks.org/opencv-python-tutorial/)
+
+## Matplotlib
+Matplotlib is a Python library for visualisation. It is a comprehensive library for creating static, animated, and interactive visualizations in Python. I have used this library to show images taken from video frames.
+
+> **Reference**: [**matplotlib.org**](https://matplotlib.org/)
+
 
 # Installing FFmpeg
 ## Install FFmpeg in the system (Windows)

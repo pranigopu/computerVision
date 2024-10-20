@@ -47,6 +47,8 @@ for frame in range(numFrames):
     moreFramesToRead, image = capture.read()
     if frame % jumpSize == 0:
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        # NOTE 1: `cv2.COLOR_BGR2RGB` is an integer constant representing the colour conversion option for BGR-to-RBG
+        # NOTE 2: Colour order must be converted since OpenCV and Matplotlib use the BGR and RGB colour orders respectively
         axs[imageIndex].imshow(image)
         axs[imageIndex].axis('off')
         imageIndex += 1

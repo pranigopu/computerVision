@@ -34,7 +34,10 @@ while moreFramesToRead:
     Per call, it also returns the image corresponding to the frame.
     The image is an array of dimensions (h, w, 3), where h and w are
     the height and width of the video. The 3rd dimension represents
-    the BGR (blue, green and red) values; hence, it has the size 3.
+    the BGR (blue, green and red) channels; hence, it has the size 3.
+    Note that each channel contains an array of values for the
+    corresponding colour, and any colour can be constructed from some
+    combination of blue, green and red.
     '''
 
     #------------------------------------
@@ -43,11 +46,14 @@ while moreFramesToRead:
     '''
     NOTE: WHY CONVERT COLOUR ORDER?
     Note that the colour order of OpenCV is different from the colour
-    order used by `matplotlib.pyplot`, which means a conversion
-    (essentially a reshaping) is needed to accurately display the
-    image using `matplotlib.pyplot.imshow`.
+    order used by `matplotlib.pyplot` (OpenCV uses BGR, whereas
+    Matplotlib uses RGB), which means a conversion (essentially
+    reshaping the 3rd dimension of the NumPy array representing the
+    image) is needed to accurately display the image using
+    `matplotlib.pyplot.imshow`.
     '''
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    # NOTE: `cv2.COLOR_BGR2RGB` is an integer constant representing the colour conversion option for BGR-to-RBG
 
     #------------------------------------
     # Displaying the image

@@ -21,7 +21,7 @@ Using Python:
 - Generate a new video by combining images
 
 # Resources
-- [_Video Data Processing with Python and OpenCV_ by Rob Mulla](https://www.youtube.com/watch?v=AxIc-vGaHQ0)
+- [_Video Data Processing with Python and OpenCV_ by Rob Mulla from **YouTube.com**](https://www.youtube.com/watch?v=AxIc-vGaHQ0)
 - [`workingNotes.md` (my personal notes for tips, issues and solutions)](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md)
 - [_Driving Video with Object Tracking_ dataset by Rob Mulla from **Kaggle.com**](https://www.kaggle.com/datasets/robikscube/driving-video-with-object-tracking)
 

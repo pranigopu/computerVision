@@ -13,8 +13,8 @@ For notes on my use of `sys` here, see...
 ... in "https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md"
 '''
 
-# To see progress par in loops:
-import tqdm
+# To see progress bar for loop iterations:
+from tqdm import tqdm
 
 #================================================
 # Getting the annotations data
@@ -72,7 +72,7 @@ output = cv2.VideoWriter(outputFileName, videoCodecFourccCode, fps, (frameWidth,
 #================================================
 # Adding annotations for all frames
 
-for frame in tqdm.tqdm(range(int(numFrames))):
+for frame in tqdm(range(int(numFrames))):
     moreFramesToRead, image = capture.read()
     if not moreFramesToRead:
         break
