@@ -25,8 +25,7 @@ numFrames = int(capture.get(cv2.CAP_PROP_FRAME_COUNT))
 # Defining the subplots in which to place the images
 
 #------------------------------------
-# Deciding the dimensions of the grid of subplots
-
+# Deciding the dimensions of the grid of subplots:
 # STRATEGY: First try a square grid, then keep reducing the number of columns until a good-enough fit is achieved
 numCols = numRows = ceil(sqrt(numFramesToShow)) # Number of rows and columns in the grid of subplots
 while abs(numRows * numCols - numFramesToShow) > 1: # Hence, there can be at most one leftover subplot, no more
@@ -38,7 +37,8 @@ fig, axs = plt.subplots(numRows, numCols, figsize=(10, 10), constrained_layout=T
 axs = axs.flatten() # Flattening the array of subplots to easily iterate over them
 
 #================================================
-# Display frames evenly spread across the video:
+# Display frames evenly spread across the video
+
 imageIndex = 0 # To keep track of the indices of subplots in which images must be displayed
 jumpSize = ceil(numFrames / numFramesToShow) # The number of frames between two frames to be displayed
 for frame in range(numFrames):
@@ -49,6 +49,7 @@ for frame in range(numFrames):
         axs[imageIndex].axis('off')
         imageIndex += 1
 
+#------------------------------------
 # Hide axes for leftover subplots (if any) so they do not show:
 while imageIndex < numRows * numCols:
     axs[imageIndex].axis('off')
