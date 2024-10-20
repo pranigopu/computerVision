@@ -37,8 +37,10 @@ fig, axs = plt.subplots(numRows, numCols, figsize=(10, 10), constrained_layout=T
 axs = axs.flatten() # Flattening the array of subplots to easily iterate over them
 
 #================================================
-# Display frames evenly spread across the video
+# Displaying frames evenly spread across the video
 
+#------------------------------------
+# Storing images as subplots:
 imageIndex = 0 # To keep track of the indices of subplots in which images must be displayed
 jumpSize = ceil(numFrames / numFramesToShow) # The number of frames between two frames to be displayed
 for frame in range(numFrames):
@@ -50,7 +52,7 @@ for frame in range(numFrames):
         imageIndex += 1
 
 #------------------------------------
-# Hide axes for leftover subplots (if any) so they do not show:
+# Hiding axes for leftover subplots (if any) so they do not show:
 while imageIndex < numRows * numCols:
     axs[imageIndex].axis('off')
     imageIndex += 1
