@@ -13,7 +13,7 @@ For notes on my use of `sys` here, see...
 
 #================================================
 inputFileName = '../videos/' + sys.argv[1] + '.mp4'
-outputFileName = inputFileName + '--compressed.mp4'
+outputFileName = '../videos/' + sys.argv[1] + '--compressed.mp4'
 subprocess.run(['ffmpeg', '-i', inputFileName, '-crf', '18', '-preset', sys.argv[2], '-vcodec', 'libx264', outputFileName])
 # NOTE 1: `-crf` here refers to "constant rate factor"; for more information, see: https://github.com/pranigopu/computerVision/blob/main/information.md#constant-rate-factor-crf
 # NOTE 2: `-preset` refers to the encoding speed to compression ratio; for more information, see the longer note below note 4
