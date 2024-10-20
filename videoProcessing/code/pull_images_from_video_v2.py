@@ -65,6 +65,7 @@ capture.release() # Releasing the `cv2.VideoCapture` object from memory
 #================================================
 # FINAL COMMENTS
 '''
-Consider why the ceiling function was used. If it were not, there
-is a risk of getting too few subplots, leading to runtime errors.
+Consider why the ceiling function was used. If it were not, and if
+rounding or integer division was done instead, there would be a
+risk of getting too few subplots, leading to runtime errors.
 '''
