@@ -170,7 +170,7 @@ There exist constants in `cv2` that refer to video properties (e.g. `cv2.CAP_PRO
 > **Key reference**: [cv::VideoCapture Class Reference (documentation)](https://docs.opencv.org/3.4/d8/dfe/classcv_1_1VideoCapture.html)
 
 ### Retrieving metadata
-Use to `.get` method, passing the index corresponding to the desired property, as demonstrated in [`read_metadata.py`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/read_metadata.py). Note that return values are floating point numbers, even for integer-valued properties like frame count.
+Use to `.get` method, passing the index corresponding to the desired property, as demonstrated in [`read_metadata.py`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/code/read_metadata.py). Note that return values are floating point numbers, even for integer-valued properties like frame count.
 
 ### Releasing a `cv2.VideoCapture` object
 Suppose `capture` is a `cv2.VideoCapture` object, which means it refers to either a video file or a data steam from a capturing device. Then, `capture.release()` closes the video file or capturing device (note that this method is automatically called when a `cv2.VideoCapture` object is destroyed). This method also deallocates memory and clears `capture` pointer.
