@@ -164,7 +164,7 @@ Specifically for my purpose, `sys.argv[0]` gives the first string after the `pyt
 
 # OpenCV for video processing in Python
 ## Obtaining video metadata
-There exist constants in `cv2` that refer to video properties (e.g. `cv2.CAP_PROP_FRAME_COUNT`). These constants are integers, which means they are indices wherein each index corresponds to a particular property. How these indices can be used to retrieve the metadata of a video is demonstrated in [`read_metadata.py`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/read_metadata.py).
+There exist constants in `cv2` that refer to video properties (e.g. `cv2.CAP_PROP_FRAME_COUNT`). These constants are integers, which means they are indices wherein each index corresponds to a particular property. How these indices can be used to retrieve the metadata of a video is demonstrated in [`read_metadata.py`](https://github.com/pranigopu/computerVision/blob/main/videoProcessing/code/read_metadata.py).
 
 ## `cv2.VideoCapture`
 > **Key reference**: [cv::VideoCapture Class Reference (documentation)](https://docs.opencv.org/3.4/d8/dfe/classcv_1_1VideoCapture.html)
