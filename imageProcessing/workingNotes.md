@@ -9,6 +9,7 @@
 - [Packages used](#packages-used)
   - [Matplotlib](#matplotlib)
   - [OpenCV](#opencv)
+  - [`glob`](#glob)
 
 ---
 
@@ -34,3 +35,11 @@ OpenCV (i.e. Open Source Computer Vision) is an open source computer vision libr
 > - [**OpenCV.org**](https://opencv.org/)
 > - [`opencv-python` (documentation)](https://pypi.org/project/opencv-python/)
 > - [_OpenCV Tutorial in Python_ from **GeeksForGeeks.org**](https://www.geeksforgeeks.org/opencv-python-tutorial/)
+
+## `glob`
+It is a module that offers Unix style pathname pattern expansion. It is a powerful tool for working with file paths and retrieving a list of file or directory paths based on specific patterns. It simplifies the process of finding files and directories that match certain criteria within a directory structure. I have used this to store multiple images from a folder into an array in a single line of code.
+
+> **References**:
+>
+> - [`glob` — Unix style pathname pattern expansion (documentation)](https://docs.python.org/3/library/glob.html)
+> - [_Python Glob Module Tutorial (With Examples)_ from **MachineLearningTutorials.org**](https://machinelearningtutorials.org/python-glob-module-tutorial-with-examples/)
