@@ -21,10 +21,10 @@ numFramesToShow = int(sys.argv[2])
 capture = cv2.VideoCapture(fileName) # Opening and capturing the frames of the vide file
 numFrames = int(capture.get(cv2.CAP_PROP_FRAME_COUNT))
 
-#------------------------------------
+#================================================
 # Defining the subplots in which to place the images
 
-#________________________
+#------------------------------------
 # Deciding the dimensions of the grid of subplots
 
 # STRATEGY: First try a square grid, then keep reducing the number of columns until a good-enough fit is achieved
@@ -33,11 +33,11 @@ while abs(numRows * numCols - numFramesToShow) > 1: # Hence, there can be at mos
     numCols -= 1
     numRows = ceil(numFramesToShow / numCols)
 
-#________________________
+#------------------------------------
 fig, axs = plt.subplots(numRows, numCols, figsize=(10, 10), constrained_layout=True)
 axs = axs.flatten() # Flattening the array of subplots to easily iterate over them
 
-#------------------------------------
+#================================================
 # Display frames evenly spread across the video:
 imageIndex = 0 # To keep track of the indices of subplots in which images must be displayed
 jumpSize = ceil(numFrames / numFramesToShow) # The number of frames between two frames to be displayed
