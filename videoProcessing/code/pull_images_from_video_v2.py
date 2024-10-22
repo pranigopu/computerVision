@@ -4,7 +4,7 @@
 import cv2 # OpenCV for Python
 import matplotlib.pyplot as plt # For image display functionality
 
-# EXTRA: For passing argument to this script in command line:
+# EXTRA: For passing arguments to this script in command line:
 import sys
 '''
 For notes on my use of `sys` here, see...

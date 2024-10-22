@@ -1,0 +1,35 @@
+# SEPARATE COLOUR CHANNELS (FOR DEMO PURPOSES)
+
+# For image handling:
+import matplotlib.pyplot as plt
+
+# To load multiple file paths from a folder:
+from glob import glob
+
+# EXTRA: For passing arguments to this script in command line:
+import sys
+# NOTE: This is a non-essential feature; it is for my own convenience
+'''
+EXPECTED COMMAND LINE ARGUMENT:
+Image index (i.e. the index of the image file path as loaded by `glob`)
+'''
+
+#================================================
+imageFiles = glob('../images/*.jpg')
+imageIndex = int(sys.argv[1])
+image = plt.imread(imageFiles[imageIndex])
+
+# Determining the appropriate display dimensions:
+n = float(max([image.shape[0], image.shape[1]]))
+height = 5 * image.shape[0] / n
+width = 5 * image.shape[1] / n
+
+# Creating the subplot grid:
+fig, axs = plt.subplots(1, 3, figsize=(width*3, height), tight_layout=True)
+
+# Displaying each colour channel separately:
+axs[0].imshow(image[:, :, 0], cmap='Reds'), axs[0].axis('off'), axs[0].set_title('Red channel')
+axs[1].imshow(image[:, :, 1], cmap='Greens'), axs[1].axis('off'), axs[1].set_title('Green channel')
+axs[2].imshow(image[:, :, 2], cmap='Blues'), axs[2].axis('off'), axs[2].set_title('Blue channel')
+
+plt.show()

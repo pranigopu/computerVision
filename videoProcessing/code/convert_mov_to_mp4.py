@@ -5,7 +5,7 @@
 
 import subprocess
 
-# EXTRA: For passing argument to this script in command line:
+# EXTRA: For passing arguments to this script in command line:
 import sys
 '''
 For notes on my use of `sys` here, see...
