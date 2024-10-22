@@ -31,8 +31,8 @@ chosenKernel = sys.argv[2]
 newImage = cv2.filter2D(image, -1, kernel[chosenKernel])
 '''
 `cv2.filter2D` convolves an image with a given kernel (typically a
-2D matrix) to apply a filter on the images. This function has the
-following arguments:
+2D matrix) to apply a filter on the images; the convolution has a
+step size of 1. The function has the following arguments:
 
 - `src`    : Image array
 - `ddepth` : Desired depth of the image (bit depth)
