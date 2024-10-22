@@ -1,16 +1,39 @@
 # FILTER IMAGE
 
+# For image handling:
 import cv2
 import matplotlib.pyplot as plt
+
+# To load multiple file paths from a folder:
 from glob import glob
+
+# For NumPy array creation (for the filter kernels):
 import numpy as np
-import sys
+
+# EXTRA:
+# For passing arguments to this script in command line:
+from sys import argv
+'''
+1) Image index (i.e. the index of the image file path as loaded by `glob`)
+2) Filter option; the following are available:
+    sharpen
+    box_blur
+    gaussian_blur
+    edge_detection
+3) Image display scale
+4) Indication of whether to save or not
+    - Put the string "save" (without quotes) to save the image
+    - Omit the argument to avoid saving the image
+'''
+
+# For creating a new sudirectory (i.e. subfolder) for filtered images (if it does not already exist):
+from os import mkdir
 
 #================================================
 # Obtaining the image
 
 imageFiles = glob('../images/*.jpg')
-imageIndex = int(sys.argv[1])
+imageIndex = int(argv[1])
 image = plt.imread(imageFiles[imageIndex])
 
 #================================================
@@ -27,7 +50,7 @@ kernel['box_blur'] = np.ones((3, 3)) / 9
 #================================================
 # Applying the specified kernel
 
-chosenKernel = sys.argv[2]
+chosenKernel = argv[2]
 newImage = cv2.filter2D(image, -1, kernel[chosenKernel])
 '''
 `cv2.filter2D` convolves an image with a given kernel (typically a
@@ -60,7 +83,7 @@ References for bit depth:
 # Displaying the image
 
 # Determining the display dimensions:
-scale = float(sys.argv[3])
+scale = float(argv[3])
 n = float(max(newImage.shape[0], newImage.shape[1]))
 height = scale * newImage.shape[0] / n
 width = scale * newImage.shape[1] / n
@@ -73,9 +96,17 @@ plt.show()
 
 #================================================
 # Saving image (if specified)
-if len(sys.argv) > 4 and sys.argv[4] == 'save':
-    plt.imsave(imageFiles[imageIndex][:-4] + ' (filter-' + chosenKernel + ').jpg', newImage) # No return value to indicate success or failure
+if len(argv) > 4 and argv[4] == 'save':
+    # Creating a subdirectory (i.e. subfolder) for filtered images if one does not already exist:
+    filteredImageDirectory = '../images/filtered/'
+    try: mkdir(filteredImageDirectory)
+    except FileExistsError: pass
+
+    # Storing the image:
+    plt.imsave(filteredImageDirectory + imageFiles[imageIndex][10:-4] + ' (filter-' + chosenKernel + ').jpg', newImage)
+    # NOTE: This function has no return value to indicate success or failure
     '''
     ALTERNATE CODE:
-    cv2.imwrite(imageFiles[imageIndex][:-4] + ' - ' + chosenKernel + '.jpg', newImage) # Returns `True` if save is successful
+    cv2.imwrite(filteredImageDirectory + imageFiles[imageIndex][10:-4] + ' (filter-' + chosenKernel + ').jpg', newImage)
+    # NOTE: This function returns `True` if the save is successful
     '''

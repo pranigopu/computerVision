@@ -17,7 +17,7 @@
 - [Issues with commands through Python's subprocess module](#issues-with-commands-through-pythons-subprocess-module)
   - [Issue history](#issue-history)
   - [An easy solution](#an-easy-solution)
-- [Use of `sys` in my video processing programs](#use-of-sys-in-my-video-processing-programs)
+- [Use of `argv` from `sys` in my video processing programs](#use-of-argv-from-sys-in-my-video-processing-programs)
 - [OpenCV for video processing in Python](#opencv-for-video-processing-in-python)
   - [Obtaining video metadata](#obtaining-video-metadata)
   - [`cv2.VideoCapture`](#cv2videocapture)
@@ -157,10 +157,10 @@ subprocess.run(['cmd', '/c', ''])
 
 Hence, a solution was to prefix the commands with `cmd /c` (note that `cmd` is a command while `/c` is an option within this command); to see information on `cmd`, enter `cmd /?` in Command Prompt. According to this information, `cmd` starts a new instance of the Windows XP command interpreter, whereas `/c` carries out the command specified by the following string and then terminates. This fixed the issue previously seen.
 
-# Use of `sys` in my video processing programs
+# Use of `argv` from `sys` in my video processing programs
 I aim to pass the file name (without extension) as an argument to a video-processing Python script, so that I can make the script more generalisable while also being able to use the command history to access previous calls to the Python script (without having to re-enter the file name in, for example, a runtime input). To learn more about the `sys` module, click [here](https://github.com/pranigopu/computerVision/blob/main/information.md#sys).
 
-Specifically for my purpose, `sys.argv[0]` gives the first string after the `python` command, which would be the Python file's name. `sys.argv[1]` gives the second string after the `python` command, which would be any argument passed after the Python file's name. Note that all command line arguments are taken as strings.
+`argv` from the `sys` module is the list of command line arguments passed. Specifically for my purposes, `argv[0]` gives the first string after the `python` command, which would be the Python file's name. `argv[1]` gives the second string after the `python` command, which would be any argument passed after the Python file's name. Note that all command line arguments are taken as strings.
 
 # OpenCV for video processing in Python
 ## Obtaining video metadata

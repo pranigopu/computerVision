@@ -4,17 +4,17 @@
 import subprocess
 
 # EXTRA: For passing arguments to this script in command line:
-import sys
+from sys import argv
 '''
-For notes on my use of `sys` here, see...
-"Use of `sys` in my video processing programs"
+For notes on my use of `argv` from `sys`, see...
+"Use of `argv` from `sys` in my video processing programs"
 ... in "https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md"
 '''
 
 #================================================
-inputFileName = '../videos/' + sys.argv[1] + '.mp4'
-outputFileName = '../videos/' + sys.argv[1] + '--compressed.mp4'
-subprocess.run(['ffmpeg', '-i', inputFileName, '-crf', '18', '-preset', sys.argv[2], '-vcodec', 'libx264', outputFileName])
+inputFileName = '../videos/' + argv[1] + '.mp4'
+outputFileName = '../videos/' + argv[1] + '--compressed.mp4'
+subprocess.run(['ffmpeg', '-i', inputFileName, '-crf', '18', '-preset', argv[2], '-vcodec', 'libx264', outputFileName])
 # NOTE 1: `-crf` here refers to "constant rate factor"; for more information, see: https://github.com/pranigopu/computerVision/blob/main/information.md#constant-rate-factor-crf
 # NOTE 2: `-preset` refers to the encoding speed to compression ratio; for more information, see the longer note below note 4
 # NOTE 3: `-vcodec` refers to video codec; for the definition of codecs, see: https://github.com/pranigopu/computerVision/blob/main/definitions.md#video-and-audio-codecs

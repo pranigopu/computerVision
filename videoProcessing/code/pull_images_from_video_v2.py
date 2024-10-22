@@ -5,10 +5,10 @@ import cv2 # OpenCV for Python
 import matplotlib.pyplot as plt # For image display functionality
 
 # EXTRA: For passing arguments to this script in command line:
-import sys
+from sys import argv
 '''
-For notes on my use of `sys` here, see...
-"Use of `sys` in my video processing programs"
+For notes on my use of `argv` from `sys`, see...
+"Use of `argv` from `sys` in my video processing programs"
 ... in "https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md"
 '''
 
@@ -16,8 +16,8 @@ For notes on my use of `sys` here, see...
 from math import sqrt, ceil
 
 #================================================
-fileName = '../videos/' + sys.argv[1] + '.mp4'
-numFramesToShow = int(sys.argv[2])
+fileName = '../videos/' + argv[1] + '.mp4'
+numFramesToShow = int(argv[2])
 capture = cv2.VideoCapture(fileName) # Opening and capturing the frames of the vide file
 numFrames = int(capture.get(cv2.CAP_PROP_FRAME_COUNT))
 

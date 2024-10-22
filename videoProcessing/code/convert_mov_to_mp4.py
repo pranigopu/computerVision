@@ -6,10 +6,10 @@
 import subprocess
 
 # EXTRA: For passing arguments to this script in command line:
-import sys
+from sys import argv
 '''
-For notes on my use of `sys` here, see...
-"Use of `sys` in my video processing programs"
+For notes on my use of `argv` from `sys`, see...
+"Use of `argv` from `sys` in my video processing programs"
 ... in "https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md"
 '''
 
@@ -17,8 +17,8 @@ For notes on my use of `sys` here, see...
 # Version 1
 
 import ffmpeg # Only version 1 needs this import
-inputFile = '../videos/' + sys.argv[1] + '.mov'
-outputFile = '../videos/' + sys.argv[1] + '.mp4'
+inputFile = '../videos/' + argv[1] + '.mov'
+outputFile = '../videos/' + argv[1] + '.mp4'
 subprocess.run(['cmd', '/c'])
 ffmpeg.input(inputFile).output(outputFile).run()
 
@@ -32,8 +32,8 @@ NOTE: Why use `subprocess.run(['cmd', '/c'])`? See...
 # Version 2
 # The same as version 1 except for the first and last lines.
 '''
-inputFile = '../data/' + sys.argv[1] + '.mov'
-outputFile = '../data/' + sys.argv[1] + '.mp4'
+inputFile = '../data/' + argv[1] + '.mov'
+outputFile = '../data/' + argv[1] + '.mp4'
 subprocess.run(['ffmpeg', '-i', inputFile, outputFile])
 '''
 

@@ -6,10 +6,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # EXTRA: For passing arguments to this script in command line:
-import sys
+from sys import argv
 '''
-For notes on my use of `sys` here, see...
-"Use of `sys` in my video processing programs"
+For notes on my use of `argv` from `sys`, see...
+"Use of `argv` from `sys` in my video processing programs"
 ... in "https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md"
 '''
 
@@ -22,7 +22,7 @@ maxFrameIndex = max(data['frameIndex'])
 #================================================
 # Getting the video file
 
-fileName = '../videos/' + sys.argv[1] + '.mp4'
+fileName = '../videos/' + argv[1] + '.mp4'
 capture = cv2.VideoCapture(fileName)
 
 #================================================
@@ -43,7 +43,7 @@ multiplier = numFrames / maxFrameIndex
 #================================================
 # Retrieving the image of a particular frame in the video
 
-chosenFrameIndex = int(sys.argv[2])
+chosenFrameIndex = int(argv[2])
 chosenFrameNumber = round(chosenFrameIndex * multiplier)
 for frame in range(chosenFrameNumber):
     moreFramesToRead, image = capture.read()

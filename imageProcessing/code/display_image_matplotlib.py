@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from glob import glob
 
 # EXTRA: For passing arguments to this script in command line:
-import sys
+from sys import argv
 # NOTE: This is a non-essential feature; it is for my own convenience
 '''
 EXPECTED COMMAND LINE ARGUMENTS:
@@ -22,13 +22,13 @@ EXPECTED COMMAND LINE ARGUMENTS:
 
 #================================================
 imageFiles = glob('../images/*.jpg')
-imageIndex = int(sys.argv[1]) # Image index must be given as a command line argument
+imageIndex = int(argv[1]) # Image index must be given as a command line argument
 image = plt.imread(imageFiles[imageIndex])
 
 #================================================
 # Inspecting the image array
 
-if 'a' in sys.argv[2]:
+if 'a' in argv[2]:
     print('\nINSPECTING IMAGE ARRAY:')
     print(type(image))
     print(image.shape)
@@ -36,7 +36,7 @@ if 'a' in sys.argv[2]:
 #================================================
 # Plotting the image's pixel values, i.e. the image array's cell values
 
-if 'b' in sys.argv[2]:
+if 'b' in argv[2]:
     print('\nPLOTTING THE DISTRIBUTION OF THE IMAGE ARRAY\'S PIXEL VALUES:')
     plt.hist(image.flatten(), bins=50)
     plt.title('Distribution of the image\'s pixel values')
@@ -47,10 +47,10 @@ if 'b' in sys.argv[2]:
 #================================================
 # Displaying the image
 
-if 'c' in sys.argv[2]:
+if 'c' in argv[2]:
     print('\nDISPLAYING THE IMAGE')
     # Dynamically deciding the display dimensions based on the given scale:
-    scale = float(sys.argv[3])
+    scale = float(argv[3])
     n = float(max([image.shape[0], image.shape[1]]))
     height = scale * image.shape[0] / n
     width = scale * image.shape[1] / n

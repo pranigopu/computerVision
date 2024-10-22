@@ -6,10 +6,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # EXTRA: For passing arguments to this script in command line:
-import sys
+from sys import argv
 '''
-For notes on my use of `sys` here, see...
-"Use of `sys` in my video processing programs"
+For notes on my use of `argv` from `sys`, see...
+"Use of `argv` from `sys` in my video processing programs"
 ... in "https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md"
 '''
 
@@ -25,7 +25,7 @@ maxFrameIndex = max(data['frameIndex'])
 #================================================
 # Getting the video file
 
-fileName = '../videos/' + sys.argv[1] + '.mp4'
+fileName = '../videos/' + argv[1] + '.mp4'
 capture = cv2.VideoCapture(fileName)
 
 #================================================
@@ -62,7 +62,7 @@ frameWidth = int(capture.get(cv2.CAP_PROP_FRAME_WIDTH))
 # NOTE: The above need to be integers to be valid arguments in the video writer initialiser
 fps = capture.get(cv2.CAP_PROP_FPS)
 # Creating the video writer object:
-outputFileName = '../videos/' + sys.argv[1] + '--annotated.mp4'
+outputFileName = '../videos/' + argv[1] + '--annotated.mp4'
 videoCodec = 'mp4v'
 videoCodecFourccCode = cv2.VideoWriter.fourcc(*videoCodec)
 # NOTE 1: `*` as used here is the unpacking operation; to learn more, see: https://github.com/pranigopu/computerVision/blob/main/information.md#unpacking-operation

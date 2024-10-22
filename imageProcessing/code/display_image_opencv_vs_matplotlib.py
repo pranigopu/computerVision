@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from glob import glob
 
 # EXTRA: For passing arguments to this script in command line:
-import sys
+from sys import argv
 # NOTE: This is a non-essential feature; it is for my own convenience
 '''
 EXPECTED COMMAND LINE ARGUMENT:
@@ -18,7 +18,7 @@ EXPECTED COMMAND LINE ARGUMENT:
 
 #================================================
 imageFiles = glob('../images/*.jpg')
-imageIndex = int(sys.argv[1])
+imageIndex = int(argv[1])
 imageFromOpenCV = cv2.imread(imageFiles[imageIndex])
 imageFromMatplotlib = plt.imread(imageFiles[imageIndex])
 
@@ -32,7 +32,7 @@ To demonstrate, see `imageFromOpenCV` displayed by Matplotlib.
 # Displaying images to compare
 
 # Setting the dimensions of the display:
-scale = float(sys.argv[2])
+scale = float(argv[2])
 n = float(max(imageFromOpenCV.shape[0], imageFromOpenCV.shape[1]))
 height = scale * imageFromOpenCV.shape[0] / n
 width = scale * imageFromOpenCV.shape[1] / n

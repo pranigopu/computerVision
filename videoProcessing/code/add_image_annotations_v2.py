@@ -6,10 +6,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # EXTRA: For passing arguments to this script in command line:
-import sys
+from sys import argv
 '''
-For notes on my use of `sys` here, see...
-"Use of `sys` in my video processing programs"
+For notes on my use of `argv` from `sys`, see...
+"Use of `argv` from `sys` in my video processing programs"
 ... in "https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md"
 '''
 
@@ -22,11 +22,11 @@ maxFrameIndex = max(data['frameIndex'])
 #================================================
 # The following code is from `add_image_annotations_v1.py` (see this source file for clarity on the code's logic)
 
-fileName = '../videos/' + sys.argv[1] + '.mp4'
+fileName = '../videos/' + argv[1] + '.mp4'
 capture = cv2.VideoCapture(fileName)
 numFrames = capture.get(cv2.CAP_PROP_FRAME_COUNT)
 multiplier = numFrames / maxFrameIndex
-chosenFrameIndex = int(sys.argv[2])
+chosenFrameIndex = int(argv[2])
 chosenFrameNumber = round(chosenFrameIndex * multiplier)
 capture = cv2.VideoCapture(fileName)
 for frame in range(chosenFrameNumber):

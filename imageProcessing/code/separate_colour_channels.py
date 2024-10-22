@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from glob import glob
 
 # EXTRA: For passing arguments to this script in command line:
-import sys
+from sys import argv
 # NOTE: This is a non-essential feature; it is for my own convenience
 '''
 EXPECTED COMMAND LINE ARGUMENT:
@@ -16,7 +16,7 @@ Image index (i.e. the index of the image file path as loaded by `glob`)
 
 #================================================
 imageFiles = glob('../images/*.jpg')
-imageIndex = int(sys.argv[1])
+imageIndex = int(argv[1])
 image = plt.imread(imageFiles[imageIndex])
 
 # Determining the appropriate display dimensions:

@@ -8,15 +8,15 @@
 import cv2 # OpenCV for Python
 
 # EXTRA: For passing arguments to this script in command line:
-import sys
+from sys import argv
 '''
-For notes on my use of `sys` here, see...
-"Use of `sys` in my video processing programs"
+For notes on my use of `argv` from `sys`, see...
+"Use of `argv` from `sys` in my video processing programs"
 ... in "https://github.com/pranigopu/computerVision/blob/main/videoProcessing/workingNotes.md"
 '''
 
 #================================================
-fileName = '../videos/' + sys.argv[1] + '.mp4'
+fileName = '../videos/' + argv[1] + '.mp4'
 capture = cv2.VideoCapture(fileName)
 
 # The following is done for  convenience in looping over information:
