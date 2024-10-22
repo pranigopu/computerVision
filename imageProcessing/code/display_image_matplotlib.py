@@ -1,4 +1,4 @@
-# DISPLAY IMAGES USING MATPLOTLIB
+# DISPLAY IMAGE USING MATPLOTLIB
 
 # For image handling:
 import matplotlib.pyplot as plt
