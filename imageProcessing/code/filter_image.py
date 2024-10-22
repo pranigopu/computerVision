@@ -97,6 +97,7 @@ plt.show()
 
 #================================================
 # Saving image (if specified)
+
 if len(argv) > 4 and argv[4] == 'save':
     # Creating a subdirectory (i.e. subfolder) for filtered images if one does not already exist:
     filteredImageDirectory = '../images/filtered/'
