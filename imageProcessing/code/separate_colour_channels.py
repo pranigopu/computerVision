@@ -25,11 +25,12 @@ height = 5 * image.shape[0] / n
 width = 5 * image.shape[1] / n
 
 # Creating the subplot grid:
-fig, axs = plt.subplots(1, 3, figsize=(width*3, height), tight_layout=True)
+fig, axs = plt.subplots(1, 4, figsize=(width*3, height), tight_layout=True)
 
-# Displaying each colour channel separately:
-axs[0].imshow(image[:, :, 0], cmap='Reds'), axs[0].axis('off'), axs[0].set_title('Red channel')
-axs[1].imshow(image[:, :, 1], cmap='Greens'), axs[1].axis('off'), axs[1].set_title('Green channel')
-axs[2].imshow(image[:, :, 2], cmap='Blues'), axs[2].axis('off'), axs[2].set_title('Blue channel')
+# Displaying each colour channel separately (along with the full image for reference):
+axs[0].imshow(image), axs[0].axis('off'), axs[0].set_title('Full image')
+axs[1].imshow(image[:, :, 0], cmap='Reds'), axs[1].axis('off'), axs[1].set_title('Red channel')
+axs[2].imshow(image[:, :, 1], cmap='Greens'), axs[2].axis('off'), axs[2].set_title('Green channel')
+axs[3].imshow(image[:, :, 2], cmap='Blues'), axs[3].axis('off'), axs[3].set_title('Blue channel')
 
 plt.show()
