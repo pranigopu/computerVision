@@ -14,6 +14,7 @@ import numpy as np
 # For passing arguments to this script in command line:
 from sys import argv
 '''
+EXPECTED COMMAND LINE ARGUMENTS:
 1) Image index (i.e. the index of the image file path as loaded by `glob`)
 2) Filter option; the following are available:
     sharpen
