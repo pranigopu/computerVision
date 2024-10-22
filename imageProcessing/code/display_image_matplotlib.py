@@ -11,7 +11,6 @@ from sys import argv
 # NOTE: This is a non-essential feature; it is for my own convenience
 '''
 EXPECTED COMMAND LINE ARGUMENTS:
-
 1) Image index (i.e. the index of the image file path as loaded by `glob`)
 2) Display options (put all desired characters in a single string)
     a = show the image's type and shape (as read by Matplotllib)
