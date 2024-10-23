@@ -18,6 +18,7 @@ Using Python:
 - See the image's metadata
 - Manipulate image colour
 - Apply filters to the image (e.g. sharpen, blur, etc.)
+- Resize and reshape images
 - Save image
 
 # Resources
