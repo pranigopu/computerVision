@@ -14,6 +14,7 @@ import numpy as np
 # For passing arguments to this script in command line:
 from sys import argv
 '''
+EXPECTED COMMAND LINE ARGUMENTS:
 1) Image index (i.e. the index of the image file path as loaded by `glob`)
 2) Filter option; the following are available:
     sharpen
@@ -96,6 +97,7 @@ plt.show()
 
 #================================================
 # Saving image (if specified)
+
 if len(argv) > 4 and argv[4] == 'save':
     # Creating a subdirectory (i.e. subfolder) for filtered images if one does not already exist:
     filteredImageDirectory = '../images/filtered/'

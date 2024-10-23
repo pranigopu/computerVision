@@ -10,7 +10,7 @@ _General information_...
 
 - [Definitions](https://github.com/pranigopu/computerVision/blob/main/definitions.md) (of technical terms)
 - [Information](https://github.com/pranigopu/computerVision/blob/main/information.md) (on technical tools)
-- [Lessons](https://github.com/pranigopu/computerVision/blob/main/lessons.md) (on generalised experiential lessons)
+- [Lessons](https://github.com/pranigopu/computerVision/blob/main/lessons.md) (experiential lessons)
 
 _Specific areas_...
 

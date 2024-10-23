@@ -1,4 +1,4 @@
-# DISPLAY IMAGES USING OPENCV AND MATPLOTLIB (TO COMPARE)
+# READ IMAGES USING OPENCV AND MATPLOTLIB (TO COMPARE)
 
 # For image handling:
 import cv2
@@ -11,7 +11,7 @@ from glob import glob
 from sys import argv
 # NOTE: This is a non-essential feature; it is for my own convenience
 '''
-EXPECTED COMMAND LINE ARGUMENT:
+EXPECTED COMMAND LINE ARGUMENTS:
 1) Image index (i.e. the index of the image file path as loaded by `glob`)
 2) Image display scale
 '''
